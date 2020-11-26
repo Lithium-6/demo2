@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${page}"></title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <a href="/secondary">Вторая страница</a>
+
+    <div th:each="el : ${posts}">
+        <p th:text="${el.name}"></p>
+        <p th:text="${el.message}"></p>
+
+    </div>
+
+    <form action="/" method="post">
+        <input type="text" name="title" placeholder="Enter title"><br>
+        <input type="text" name="anons" placeholder="Anons"><br>
+        <textarea type="text" name="full_text" placeholder="Enter text"></textarea><br>
+        <button type="submit">Add post</button>
+    </form>
+</body>
+</html>
